@@ -58,4 +58,12 @@ A stepper motor is an electric motor whose main characteristic is that its shaft
 <p align="center">
 <img src="moteur.jpg" alt="Image 2" width="200"></td>
 </p>
+<h1 align="center">Realization</h1>
+<h3>Algorithm explantion</h3>
+Our algorithm for this mobile robot project involves using a matrix to represent the maze, where each cell is numbered based on its distance to the destination. The destination itself is marked with "0", adjacent cells are marked with "1", cells next to the "1" marked cells are marked with "2", and so on until all cells are filled. Then, the robot is placed in a random cell and uses this matrix to plan the shortest path to reach the destination while avoiding obstacles, which are defined as cells with high values in the matrix. In our example, we have a 5*5 maze, and we provide the robot with the destination (4,3).
+
+<h3>Code</h3>
+
+
+
 
