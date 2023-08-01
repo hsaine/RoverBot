@@ -26,4 +26,14 @@ Next, we employed 3D printing to manufacture all the necessary parts for the whe
 
 By using SolidWorks and 3D printing, we successfully developed a reliable and efficient robot that fulfills all the requirements of our project. We take pride in our creation and look forward to seeing it in action.
 
-The figures below illustrate the machines constructing different pieces of our robot.</p>
+The figures below illustrate the machines constructing different pieces of our robot:</p>
+<table>
+    <tr>
+      <td><img src="photo1674556183 (1).jpeg" alt="Image 1" width="200"></td>
+      <td><img src="photo1674556183 (2).jpeg" alt="Image 2" width="200"></td>
+    </tr>
+    <tr>
+      <td><img src="photo1674556183 (3).jpeg" alt="Image 3" width="200"></td>
+      <td><img src="photo1674556183 (4).jpeg" alt="Image 4" width="200"></td>
+    </tr>
+  </table>
