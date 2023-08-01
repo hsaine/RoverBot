@@ -31,9 +31,8 @@ The figures below illustrate the machines constructing different pieces of our r
     <tr>
       <td><img src="photo1674556183 (1).jpeg" alt="Image 1" width="200"></td>
       <td><img src="photo1674556183 (2).jpeg" alt="Image 2" width="200"></td>
-    </tr>
-    <tr>
       <td><img src="photo1674556183 (3).jpeg" alt="Image 3" width="200"></td>
       <td><img src="photo1674556183 (4).jpeg" alt="Image 4" width="200"></td>
     </tr>
+ 
   </table>
