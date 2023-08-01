@@ -15,3 +15,15 @@ the robot is placed in a random cell and uses this matrix to plan its path while
 it has passed for mapping. This approach allows the robot to navigate efficiently in complex
 environments by using distance information and avoiding obstacles to reach its destination
 optimally
+
+<h1 align="center">The Design and Modeling of RoverBot</h1>
+
+<h2 align="center">3D Printing</h2>
+<p>
+In our project, we created the basic structure of our robot using the SolidWorks CAD software. We utilized this software to design the shape of the robot's base and ensure that all parts fit together correctly. For the wheels, we used an existing model of mecanum wheels to ensure a reliable and efficient design.
+
+Next, we employed 3D printing to manufacture all the necessary parts for the wheels in our university laboratory. This allowed us to create precise and high-quality components for our robot, which is crucial for ensuring optimal performance and durability.
+
+By using SolidWorks and 3D printing, we successfully developed a reliable and efficient robot that fulfills all the requirements of our project. We take pride in our creation and look forward to seeing it in action.
+
+The figures below illustrate the machines constructing different pieces of our robot.</p>
