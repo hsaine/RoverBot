@@ -1,5 +1,8 @@
 <h1 align="center">RoverBot</h1>
- <p align="center"> <img src="rover.jpg" title="RoverBot "><br> RoverBot</p> 
+<p align="center">
+  <img src="rover.jpg" title="RoverBot" width="300" height="200"><br>
+  RoverBot
+</p>
 
 
 <h1 align="center">Abstract</h1>
