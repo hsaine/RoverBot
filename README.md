@@ -36,3 +36,19 @@ The figures below illustrate the machines constructing different pieces of our r
     </tr>
  
   </table>
+
+<h1 align="center">HARDWARE</h1>
+<p>We will use stepper motors, an A4988 driver, and an Arduino Mega board to build a holonomic mobile robot. Stepper motors are electric motors that can be controlled step by step, allowing for extremely precise control. The A4988 driver is a microstepping driver that simplifies the control of stepper motors by integrating a translator for easy use. The Arduino Mega board is a popular development board with enough output pins to connect the stepper motors and sufficient memory to store the control code. By combining these components, we will be able to construct a holonomic mobile robot capable of precise and controlled movements</p>
+
+<h3>Arduino Mega</h3>
+An Arduino Mega board can be used to drive 4 stepper motors for a mobile robot as it provides enough output pins to connect all 4 motors. Additionally, it has sufficient memory to store the necessary code for motor control. By using a stepper motor driver like A4988, which can be connected to the Arduino Mega, it becomes easy to control the stepper motors with simple high-level commands. Lastly, the Arduino Mega is a popular platform for robotics projects due to its user-friendliness and a large community of developers.
+<img src="arduino.jpeg" alt="Image 2" width="200"></td>
+
+<h3>The A4988 Stepper Motor Driver</h3>
+The A4988 is a micro-stepping driver designed to control bipolar stepper motors and features a built-in translator for easy use. This means we can control the stepper motor with just 2 pins from our controller: one for controlling the direction of rotation and the other for controlling the steps. The driver offers five different step resolutions: full step, half-step, quarter-step, eighth-step, and sixteenth-step. Additionally, it includes a potentiometer for adjusting the output current, thermal shutdown protection in case of overheating, and protection against cross-currents.
+Its logic voltage ranges from 3 to 5.5V, and the maximum current per phase is 2A if proper additional cooling is provided or 1A of continuous current per phase without a heatsink or cooling.
+<img src="driver.jpg" alt="Image 2" width="200"></td>
+
+<h3>Stepper Motor</h3>
+A stepper motor is an electric motor whose main characteristic is that its shaft rotates by taking steps, which means it moves a fixed amount of degrees with each step. This feature is achieved through the internal structure of the motor and allows for knowing the exact angular position of the shaft by simply counting the number of steps taken, without the need for a sensor. This characteristic also makes it suitable for a wide range of applications.
+<img src="moteur.jpg" alt="Image 2" width="200"></td>
