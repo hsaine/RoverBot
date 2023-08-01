@@ -65,7 +65,8 @@ Our algorithm for this mobile robot project involves using a matrix to represent
 <h3>Code</h3>
 
 <h1 align="center">Simulation</h1>
+<p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/zyvgy9-6oCM?start=52" frameborder="0" allowfullscreen></iframe>
 
-
+</p>
 
