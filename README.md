@@ -65,7 +65,7 @@ Our algorithm for this mobile robot project involves using a matrix to represent
 <h3>Code</h3>
 
 <h1 align="center">Simulation</h1>
-[![Simulation](https://img.youtube.com/vi/VIDEO_ID/0.jpg)][(https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=zyvgy9-6oCM&t=52s&ab_channel=AyoubHsaine)https://www.youtube.com/watch?v=zyvgy9-6oCM&t=52s&ab_channel=AyoubHsaine)
+[![Simulation]([https://img.youtube.com/vi/VIDEO_ID/0.jpg](https://www.youtube.com/watch?v=zyvgy9-6oCM&t=52s&ab_channel=AyoubHsaine))][(https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=zyvgy9-6oCM&t=52s&ab_channel=AyoubHsaine)https://www.youtube.com/watch?v=zyvgy9-6oCM&t=52s&ab_channel=AyoubHsaine)
 
 
 
