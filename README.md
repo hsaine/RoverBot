@@ -63,6 +63,339 @@ A stepper motor is an electric motor whose main characteristic is that its shaft
 Our algorithm for this mobile robot project involves using a matrix to represent the maze, where each cell is numbered based on its distance to the destination. The destination itself is marked with "0", adjacent cells are marked with "1", cells next to the "1" marked cells are marked with "2", and so on until all cells are filled. Then, the robot is placed in a random cell and uses this matrix to plan the shortest path to reach the destination while avoiding obstacles, which are defined as cells with high values in the matrix. In our example, we have a 5*5 maze, and we provide the robot with the destination (4,3).
 
 <h3>Code</h3>
+<p>The code of our project is presented below for your reference :</p>
+
+```
+// CNC Shield Stepper  Control Demo
+// Superb Tech
+// www.youtube.com/superbtech
+
+#include<stdlib.h>
+#include<time.h>
+
+#define INT_MAX 1000
+
+#define row 5
+#define col 5
+
+// object coordinates
+#define objrow 1
+#define objcol 1
+//destination coordinates
+#define destrow 3
+#define destcol 3
+
+const int StepX = 2;
+const int DirX = 5;
+const int StepY = 3;
+const int DirY = 6;
+const int StepZ = 4;
+const int DirZ = 7;
+const int StepA = 12;
+const int DirA = 13;
+
+void afficherMatrice(int m[row][col]){
+	// afficher matrice.
+   
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++){
+            if(m[i][j]==404){
+                Serial.print("X");
+        Serial.print("  ");
+            }else if(m[i][j]==100){
+				Serial.print("R");
+        Serial.print("  ");
+        
+			}else{
+                Serial.print(m[i][j]);
+        Serial.print("  ");
+            }
+            }
+
+		Serial.println(" ");
+	}
+
+}
+
+void forward(){
+ digitalWrite(DirX, HIGH); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, HIGH);
+ digitalWrite(DirZ, LOW);
+ digitalWrite(DirA, LOW);
+ 
+ for(int x = 0; x<700; x++) { // loop for 200 steps
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(3000);
+  digitalWrite(StepX,LOW); 
+  digitalWrite(StepY,LOW);
+  digitalWrite(StepZ,LOW);
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(3000);
+ 
+  
+}
+}
+void right(){
+ digitalWrite(DirX, LOW); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, HIGH);
+ digitalWrite(DirZ, LOW);
+ digitalWrite(DirA, HIGH);
+ 
+ for(int x = 0; x<200; x++) { // loop for 200 steps
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(3000);
+  digitalWrite(StepX,LOW); 
+  digitalWrite(StepY,LOW);
+  digitalWrite(StepZ,LOW);
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(3000);
+ 
+  
+}
+}
+void left(){
+ digitalWrite(DirX, HIGH); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, LOW);
+ digitalWrite(DirZ, HIGH);
+ digitalWrite(DirA, LOW);
+ 
+ for(int x = 0; x<200; x++) { // loop for 200 steps
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(3000);
+  digitalWrite(StepX,LOW); 
+  digitalWrite(StepY,LOW);
+  digitalWrite(StepZ,LOW);
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(3000);
+ 
+  
+}
+}
+void backward(){
+ digitalWrite(DirX, LOW); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, LOW);
+ digitalWrite(DirZ, HIGH);
+ digitalWrite(DirA, HIGH);
+ 
+ for(int x = 0; x<200; x++) { // loop for 200 steps
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(3000);
+  digitalWrite(StepX,LOW); 
+  digitalWrite(StepY,LOW);
+  digitalWrite(StepZ,LOW);
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(3000);
+ 
+  
+}
+}
+void backright(){
+ digitalWrite(DirX, LOW); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, LOW);
+ digitalWrite(DirZ, LOW);
+ digitalWrite(DirA, LOW);
+ 
+ for(int x = 0; x<575; x++) { // loop for 200 steps
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(500);
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  delayMicroseconds(1000);
+  digitalWrite(StepZ,LOW); 
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(500);
+  digitalWrite(StepX,LOW);
+  digitalWrite(StepY,LOW);
+  delayMicroseconds(1000);
+ 
+  
+}
+}
+void backleft(){
+ digitalWrite(DirX, HIGH); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, HIGH);
+ digitalWrite(DirZ, HIGH);
+ digitalWrite(DirA, HIGH);
+ 
+ for(int x = 0; x<500; x++) { // loop for 200 steps
+  digitalWrite(StepZ,HIGH);
+  digitalWrite(StepA,HIGH);
+  delayMicroseconds(500);
+  digitalWrite(StepX,HIGH);
+  digitalWrite(StepY,HIGH);
+  delayMicroseconds(1000);
+  digitalWrite(StepZ,LOW); 
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(500);
+  digitalWrite(StepX,LOW);
+  digitalWrite(StepY,LOW);
+  delayMicroseconds(1000);
+ 
+  
+}
+}
+
+void stop(){
+ digitalWrite(DirX, LOW); // set direction, HIGH for clockwise, LOW for anticlockwise
+ digitalWrite(DirY, LOW);
+ digitalWrite(DirZ, HIGH);
+ digitalWrite(DirA, HIGH);
+ 
+ for(int x = 0; x<200; x++) { // loop for 200 steps
+  digitalWrite(StepX,LOW); 
+  digitalWrite(StepY,LOW);
+  digitalWrite(StepZ,LOW);
+  digitalWrite(StepA,LOW);
+  delayMicroseconds(3000);
+ 
+  
+}
+}
+
+
+void setup() {
+  pinMode(StepX,OUTPUT);
+  pinMode(DirX,OUTPUT);
+  pinMode(StepY,OUTPUT);
+  pinMode(DirY,OUTPUT);
+  pinMode(StepZ,OUTPUT);
+  pinMode( DirZ,OUTPUT);
+  pinMode(StepA,OUTPUT);
+  pinMode( DirA,OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  delay(1000);
+ forward();
+ 
+ delay(1000);
+ backright();
+ delay(1000);
+ forward();
+ 
+ 
+
+/*
+// initiation des variables
+
+	srand(time(0));
+
+//matrice initial
+
+	int mat[row][col];
+
+	for( int i = 0; i < row; ++i)
+	{for( int j = 0;  j < col; ++j)
+	    {mat[i][j] = 0;}
+	}
+
+// on met le 1 pour notre distination
+
+	mat[destrow][destcol] = 1;
+
+// matrice des distances
+
+	int ans[row][col];
+
+	// remplire la matrice resultante avec INT_MAX pour resoudre le problem de overwrite avec zeroes
+	for (int i = 0; i < row; i++)
+		for (int j = 0; j < col; j++){
+			ans[i][j] = INT_MAX;}
+
+
+	// remplissage avec distances
+	for (int i = 0; i < row; i++)
+		for (int j = 0; j < col; j++) {
+			// traverser la matrice pour trouver la distance minimale
+			for (int k = 0; k < row; k++)
+				for (int l = 0; l < col; l++) {
+					// si cellule = 1 , on pose distance minimal
+					if (mat[k][l] == 1)
+						ans[i][j] = min(ans[i][j],abs(i - k) + abs(j - l));
+				}
+		}
+  // definir un object qui doit arriver a la destination, on lui donne la value 100 et le symbol @
+
+	int distance = ans[objrow][objcol];
+	
+	int originalobjrow = objrow;
+	int originalobjcol = objcol;
+
+	ans[originalobjrow][originalobjcol]=100;
+  afficherMatrice(ans);
+	Serial.println(" ");
+
+  int min = INT_MAX;
+
+	int tempobjrow = objrow;
+	int tempobjcol = objcol;
+	int oldobjrow = 0;
+	int oldobjcol= 0;
+  int move=0;
+
+  while(distance!=0){
+
+		if(ans[originalobjrow][originalobjcol-1]<min){
+			min = ans[tempobjrow][tempobjcol-1];
+			oldobjcol = tempobjcol;
+			tempobjcol = tempobjcol - 1;
+			move = 1;
+      left();
+		}
+		if(ans[originalobjrow-1][originalobjcol]<min){
+			min = ans[tempobjrow-1][tempobjcol];
+			oldobjrow = tempobjrow;
+			tempobjrow = tempobjrow-1;
+			move = 1;
+      forward();
+		}
+		if(ans[originalobjrow+1][originalobjcol]<min){
+			min = ans[tempobjrow+1][tempobjcol];
+			oldobjrow = tempobjrow;
+			tempobjrow = tempobjrow+1;
+			move = 1;
+      backward();
+		}
+		if(ans[originalobjrow][originalobjcol+1]<min){
+			min = ans[tempobjrow][tempobjcol+1];
+			oldobjcol = tempobjcol;
+			tempobjcol = tempobjcol+1;
+			move = 1;
+      right();
+    
+		}
+
+  ans[tempobjrow][tempobjcol]=100;
+	originalobjrow = tempobjrow;
+	originalobjcol = tempobjcol;
+	distance--;
+
+
+	
+afficherMatrice(ans);
+	Serial.println(" ");
+
+	move = 0;
+  }
+ */
+
+}
+```
 
 <h1 align="center">Simulation</h1>
 https://www.youtube.com/embed/zyvgy9-6oCM?start=52
