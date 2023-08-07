@@ -401,5 +401,14 @@ afficherMatrice(ans);
 <p>You can find the video demonstrating the project on my YouTube channel:</p>
 https://www.youtube.com/embed/zyvgy9-6oCM?start=52
 
+<h1 align="center">Team</h1>
+<li>
+	<ul> Ayoub Hsaine</ul>
+	<ul> Achraf Rachid</ul>
+	<ul> Mohamed Mouad Ouhasni </ul>
+	<ul> Aymane Baddou</ul>
+	<ul> Ilhame Soufi</ul>
+
+</li>
 
 
