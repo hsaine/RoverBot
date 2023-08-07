@@ -398,6 +398,7 @@ afficherMatrice(ans);
 ```
 
 <h1 align="center">Simulation</h1>
+<p>You can find the video demonstrating the project on my YouTube channel:</p>
 https://www.youtube.com/embed/zyvgy9-6oCM?start=52
 
 
